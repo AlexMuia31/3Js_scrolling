@@ -1,4 +1,10 @@
-import { Environment, OrbitControls, Text3D, useGLTF } from "@react-three/drei";
+import {
+  Environment,
+  OrbitControls,
+  Scroll,
+  Text3D,
+  useGLTF,
+} from "@react-three/drei";
 import { Panda } from "./Panda";
 
 import { foodItems } from "../App";
@@ -36,9 +42,11 @@ export const Experience = () => {
         </Text3D>
         <Panda position={[2.5, 0, -5]} rotation-y={-Math.PI / 6} />
       </group>
-      {foodItems.map((foodItem, idx) => (
-        <FoodItem key={idx} {...foodItem} />
-      ))}
+      <Scroll>
+        {foodItems.map((foodItem, idx) => (
+          <FoodItem key={idx} {...foodItem} />
+        ))}
+      </Scroll>
     </>
   );
 };
