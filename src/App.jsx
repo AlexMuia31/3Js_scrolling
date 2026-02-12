@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
+import { ScrollControls } from "@react-three/drei";
 
 export const foodItems = [
   {
@@ -31,11 +32,14 @@ export const foodItems = [
     page: 4,
   },
 ];
+
 function App() {
   return (
     <>
       <Canvas camera={{ position: [0, 4, 12], fov: 30 }}>
-        <Experience />
+        <ScrollControls pages={5}>
+          <Experience />
+        </ScrollControls>
       </Canvas>
     </>
   );
