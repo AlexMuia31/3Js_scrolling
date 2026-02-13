@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
-import { ScrollControls } from "@react-three/drei";
+import { Scroll, ScrollControls } from "@react-three/drei";
+import { Interface } from "./components/Interface";
 
 export const foodItems = [
   {
@@ -39,6 +40,9 @@ function App() {
       <Canvas camera={{ position: [0, 4, 12], fov: 30 }}>
         <ScrollControls pages={5}>
           <Experience />
+          <Scroll html>
+            <Interface />
+          </Scroll>
         </ScrollControls>
       </Canvas>
     </>
