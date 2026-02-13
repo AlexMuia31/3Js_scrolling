@@ -8,6 +8,7 @@ import {
 import { Panda } from "./Panda";
 
 import { foodItems } from "../App";
+import { useThree } from "@react-three/fiber";
 
 export const Experience = () => {
   return (
@@ -53,10 +54,14 @@ export const Experience = () => {
 
 const FoodItem = ({ model, page }) => {
   const gltf = useGLTF(model);
+  const viewport = useThree((state) => state.viewport);
 
   return (
     <group>
-      <primitive object={gltf.scene} position={[0, -page, 0]} />
+      <primitive
+        object={gltf.scene}
+        position={[0, -viewport.height * page, 0]}
+      />
     </group>
   );
 };
