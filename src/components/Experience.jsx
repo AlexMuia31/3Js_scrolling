@@ -4,6 +4,7 @@ import {
   Scroll,
   Text3D,
   useGLTF,
+  useScroll,
 } from "@react-three/drei";
 import { Panda } from "./Panda";
 
@@ -55,6 +56,7 @@ export const Experience = () => {
 const FoodItem = ({ model, page }) => {
   const gltf = useGLTF(model);
   const viewport = useThree((state) => state.viewport);
+  const scrollData = useScroll();
 
   return (
     <group>
