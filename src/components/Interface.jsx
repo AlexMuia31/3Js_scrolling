@@ -1,5 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { foodItems } from "../App";
+import { useScroll } from "@react-three/drei";
+import { useRef } from "react";
 
 export const Interface = () => {
   const introductionRef = useRef();
